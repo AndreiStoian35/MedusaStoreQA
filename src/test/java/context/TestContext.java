@@ -1,0 +1,12 @@
+package context;
+
+import data.AllProductsDTO;
+import data.ProductDTO;
+
+public class TestContext {
+
+   public ProductDTO product = new ProductDTO();
+   public AllProductsDTO allProducts = new AllProductsDTO();
+
+   public String productId;
+}
