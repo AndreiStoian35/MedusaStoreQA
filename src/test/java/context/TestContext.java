@@ -9,4 +9,12 @@ public class TestContext {
    public AllProductsDTO allProducts = new AllProductsDTO();
 
    public String productId;
+
+   public String regionId;
+
+   public String variantId;
+
+   public String cartId;
+
+   public String shippingOptionId;
 }

@@ -1,16 +1,10 @@
-package tests;
+package tests.base;
 
-import api.MedusaStoreApi;
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.options.RequestOptions;
 import context.TestContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import utils.ApiUtils;
 import utils.ConfigReader;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class BaseTest {
 

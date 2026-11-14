@@ -64,7 +64,7 @@ public class MedusaStoreApi {
         return apiRequestContext.get("./payment-providers?region_id=" + regionId);
     }
 
-    public APIResponse completeCheckoutForCart(String cartId,RequestOptions requestOptions){
-        return apiRequestContext.post("./carts/"+cartId + "/complete", requestOptions);
+    public APIResponse completeCheckoutForCart(String cartId){
+        return apiRequestContext.post("./carts/"+cartId + "/complete");
     }
 }

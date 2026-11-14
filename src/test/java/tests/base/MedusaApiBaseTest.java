@@ -1,6 +1,7 @@
-package tests;
+package tests.base;
 
 import api.MedusaStoreApi;
+import api.TestSteps;
 import com.microsoft.playwright.*;
 import context.TestContext;
 import org.junit.jupiter.api.AfterEach;
@@ -18,6 +19,7 @@ public class MedusaApiBaseTest {
     protected APIRequest apiRequest;
     protected TestContext testContext;
     protected ApiUtils apiUtils;
+    protected TestSteps testSteps;
 
     @BeforeEach
     public void setUp(){
@@ -27,6 +29,8 @@ public class MedusaApiBaseTest {
 
         Map<String,String> headers = new HashMap<>();
         headers.put("x-publishable-api-key",ConfigReader.getApiKey());
+        headers.put("Content-Type", "application/json");
+
 
         apiRequestContext = apiRequest.newContext(
                 new APIRequest.NewContextOptions()
@@ -37,6 +41,7 @@ public class MedusaApiBaseTest {
         medusaStoreApi = new MedusaStoreApi(apiRequestContext);
         testContext = new TestContext();
         apiUtils = new ApiUtils(medusaStoreApi);
+        testSteps = new TestSteps(testContext,apiUtils,medusaStoreApi);
     }
 
     @AfterEach
@@ -49,6 +54,8 @@ public class MedusaApiBaseTest {
         finally {
             playwright = null;
             apiRequest = null;
+            testContext = null;
+
         }
     }
 

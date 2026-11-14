@@ -17,7 +17,7 @@ public class ConfigReader {
 
             prop.load(inputStream);
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Could not parse config.properties file" + e);
         }
     }
@@ -43,15 +43,15 @@ public class ConfigReader {
     private static String getValue(String key){
 
         String systemValue = System.getProperty(key);
-        String propValue = prop.getProperty(key);
+        String propValue;
 
         if(systemValue == null || systemValue.isBlank()){
-            try{
-                return propValue;
-            }
-            catch(Exception e){
+            propValue = prop.getProperty(key);
+            if (propValue == null || propValue.isBlank())
                 throw new RuntimeException("Value not found in config.properties for key" + key);
-            }
+
+            return propValue;
+
         }
         return systemValue;
     }

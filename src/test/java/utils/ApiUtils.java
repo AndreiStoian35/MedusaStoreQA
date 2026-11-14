@@ -4,7 +4,6 @@ import api.MedusaStoreApi;
 import com.microsoft.playwright.APIResponse;
 import data.AllProductsDTO;
 import data.AllRegionsDTO;
-import tests.BaseTest;
 import tools.jackson.databind.ObjectMapper;
 
 public class ApiUtils{
