@@ -17,4 +17,6 @@ public class TestContext {
    public String cartId;
 
    public String shippingOptionId;
+
+   public String paymentCollectionId;
 }

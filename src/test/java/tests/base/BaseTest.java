@@ -33,18 +33,21 @@ public class BaseTest {
         if (browser != null){
             try{
                 browser.close();
-                browser = null;
+
             }
             finally{
-                try{
-                    if( playwright != null){
-                        playwright.close();
-                    }
-                }
-                finally {
-                    playwright = null;
-                }
+                browser = null;
+
             }
         }
+        if( playwright != null){
+            try{
+                playwright.close();
+            }
+            finally {
+                playwright = null;
+            }
+        }
+
     }
 }

@@ -54,6 +54,7 @@ public class MedusaApiBaseTest {
         finally {
             playwright = null;
             apiRequest = null;
+            apiRequestContext = null;
             testContext = null;
 
         }
